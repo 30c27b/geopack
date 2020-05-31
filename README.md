@@ -30,7 +30,10 @@ Already published articles:
 Code and documentation for the on-board Arduino electronics.
 
 ### [server](/server)
-Code and documentation for the remote servers.
+Code and documentation for the remote server that connects the on-board logic with the database.
+
+### [webserver](/webserver)
+Code and documentation for the web application displaying data.
 
 
 ## License
