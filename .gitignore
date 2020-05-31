@@ -1,0 +1,10 @@
+# general
+.vscode/
+
+# embedded
+**/arduino_secrets.h
+
+# server
+**/config.json
+
+# webserver
