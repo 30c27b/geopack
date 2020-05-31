@@ -11,4 +11,16 @@
 
 ## Description
 
-Code and documentation for the remote servers.
+Code Code and documentation for the remote server that connects the on-board logic with the database.
+and documentation for the remote servers.
+
+## Config
+
+To run the SSL server, you need to create a file called `config.json` and add fill it as follows:
+```json
+{
+	"key_path": "./path/to/key.pem",
+	"cert_path": "./path/to/cert.pem",
+	"port": 666
+}
+```
