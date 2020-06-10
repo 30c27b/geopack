@@ -4,11 +4,11 @@ const mongoose = require('mongoose');
 // Schema
 const schema = new mongoose.Schema({
 	time: { type: Date, required: true },
-	longitude: { type: String, required: true },
-	latitude: { type: String, required: true },
-	altitude: { type: String, required: true },
-	speed: { type: String, required: true },
-	satellites: { type: String, required: true },
+	longitude: { type: Number, required: true },
+	latitude: { type: Number, required: true },
+	altitude: { type: Number, required: true },
+	speed: { type: Number, required: true },
+	satellites: { type: Number, required: true },
 });
 
 schema.set('timestamps', true);
