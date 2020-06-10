@@ -19,8 +19,7 @@ and documentation for the remote servers.
 To run the SSL server, you need to create a file called `config.json` and add fill it as follows:
 ```json
 {
-	"key_path": "./path/to/key.pem",
-	"cert_path": "./path/to/cert.pem",
+	"mongoUrl": "mongodb+srv://user@password@example.net/geopack"
 	"port": 666
 }
 ```

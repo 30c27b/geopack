@@ -1,0 +1,17 @@
+{
+	"name": "geopack-server",
+	"version": "0.0.0",
+	"main": "./src/server.js",
+	"scripts": {
+		"test": "nodemon ./src/server.js"
+	},
+	"author": {
+		"name": "Antoine '30c27b' Coulon",
+		"url": "https://30c27b.com",
+		"email": "antoine@30c27b.com"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"mongoose": "^5.9.18"
+	}
+}

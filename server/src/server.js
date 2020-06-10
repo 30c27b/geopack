@@ -1,13 +1,16 @@
 // Dependencies
-const tls = require('tls');
+const net = require('net');
+const mongoose = require('mongoose');
 const config = require('./config');
+const State = require('./lib/models/State');
 
-// Server setup
-const opt = {
-	key: config.key,
-	cert: config.cert
-}
-const server = tls.createServer(opt, socket => {
+mongoose.connect(config.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+
+const server = net.createServer(socket => {
+	console.log("new connection");
+	socket.on('data', data => {
+		console.log("received data: " + data.toString());
+	});
 });
 
 server.listen(config.port);
