@@ -1,5 +1,6 @@
 // Dependencies
 const net = require('net');
+const tls = require('tls');
 const mongoose = require('mongoose');
 const config = require('./config');
 const State = require('./lib/models/State');
@@ -9,7 +10,13 @@ mongoose.connect(config.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: t
 const server = net.createServer(socket => {
 	console.log('new connection');
 	socket.on('data', data => {
+		console.log('data: ' + data.toString())
 		const state = data.toString().split(' ');
+		if (state.length != 6) {
+			console.log('bad data');
+			return;
+		}
+		state.map(value => Number(value));
 		State.create({
 			time: state[0],
 			latitude: state[1],
