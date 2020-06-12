@@ -10,20 +10,19 @@ mongoose.connect(config.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: t
 const server = net.createServer(socket => {
 	console.log('new connection');
 	socket.on('data', data => {
-		console.log('data: ' + data.toString())
+		console.log('new data: ' + data.toString())
 		const state = data.toString().split(' ');
 		if (state.length != 6) {
-			console.log('bad data');
+			console.log('invalid data');
 			return;
 		}
-		state.map(value => Number(value));
 		State.create({
-			time: state[0],
-			latitude: state[1],
-			longitude: state[2],
-			altitude: state[3],
-			speed: state[4],
-			satellites: state[5],
+			time: Date(state[0] * 1000),
+			latitude: Number(state[1]),
+			longitude: Number(state[2]),
+			altitude: Number(state[3]),
+			speed: Number(state[4]),
+			satellites: Number(state[5]),
 		}).then(doc => {
 			console.log('created doc: ' + doc);
 		}).catch(err => {
