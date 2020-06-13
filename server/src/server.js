@@ -7,7 +7,12 @@ const State = require('./lib/models/State');
 
 mongoose.connect(config.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 
-const server = net.createServer(socket => {
+const options = {
+	key: config.key,
+	cert: config.cert
+};
+
+const server = tls.createServer(options, socket => {
 	console.log('new connection');
 	socket.on('data', data => {
 		console.log('new data: ' + data.toString())
