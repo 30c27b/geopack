@@ -1,10 +1,16 @@
 # general
 .vscode/
+**/package-lock.json
+**/node_modules/
+**/secrets.json
+**.pem
+
 
 # embedded
 **/arduino_secrets.h
 
 # server
-**/config.json
+**public-cert.pem
+**private-key.pem
 
 # webserver
